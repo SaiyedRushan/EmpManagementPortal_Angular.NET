@@ -1,11 +1,5 @@
-# EmpManagementPortal_Angular.NET
+# Employee Management Portal
 A simple full stack web app built using Angular, .NET Core Web API and SQL Server
-
-Sure, I'd be happy to help you create a README.md for the "EmpManagementPortal_Angular.NET" Git repository. Below is a template you can use as a starting point:
-
-# Employee Management Portal (Angular & .NET)
-
-![Project Logo](link_to_logo.png) <!-- You can add a logo here if you have one -->
 
 ## Overview
 
