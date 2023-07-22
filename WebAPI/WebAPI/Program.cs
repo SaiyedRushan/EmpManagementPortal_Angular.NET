@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.FileProviders;
 using Newtonsoft.Json.Serialization;
@@ -11,9 +12,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddCors(c=>
+builder.Services.AddCors(options=>
 {
-    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+    options.AddPolicy("CorsPolicy", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 });
 
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
@@ -25,6 +26,7 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
+app.UseCors("CorsPolicy");
 
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -38,7 +40,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 
 app.UseAuthorization();
 
