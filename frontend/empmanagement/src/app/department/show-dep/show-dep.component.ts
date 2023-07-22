@@ -44,6 +44,7 @@ export class ShowDepComponent implements OnInit {
     this.dep=item;
     this.ModalTitle="Edit Department";
     this.ActivateAddEditDepComp=true;
+    this.modal.show();
   }
 
   deleteClick(item){

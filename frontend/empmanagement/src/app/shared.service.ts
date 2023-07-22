@@ -26,28 +26,28 @@ export class SharedService {
   }
 
   getEmpList():Observable<any[]>{
-    return this.http.get<any>(this.APIUrl+'/Employee');
+    return this.http.get<any>(this.APIUrl+'/Employees');
   }
 
   addEmployee(val:any){
-    return this.http.post(this.APIUrl+'/Employee',val);
+    return this.http.post(this.APIUrl+'/Employees',val);
   }
 
   updateEmployee(val:any){
-    return this.http.put(this.APIUrl+'/Employee',val);
+    return this.http.put(this.APIUrl+'/Employees',val);
   }
 
   deleteEmployee(val:any){
-    return this.http.delete(this.APIUrl+'/Employee/'+val);
+    return this.http.delete(this.APIUrl+'/Employees/'+val);
   }
 
 
   UploadPhoto(val:any){
-    return this.http.post(this.APIUrl+'/Employee/SaveFile',val);
+    return this.http.post(this.APIUrl+'/Employees/SaveFile',val);
   }
 
   getAllDepartmentNames():Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl+'/Employee/GetAllDepartmentNames');
+    return this.http.get<any[]>(this.APIUrl+'/Employees/GetAllDepartmentNames');
   }
 
 }
